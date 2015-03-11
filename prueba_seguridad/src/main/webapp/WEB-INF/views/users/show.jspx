@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/jquery/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_ar_edu_um_pruebaseguridad_model_User" object="${user}" path="/users" z="vnE/SxQuSHQ9OnAPM8IKGOG8tzc=">
+        <field:display field="firstName" id="s_ar_edu_um_pruebaseguridad_model_User_firstName" object="${user}" z="8MOnRAKH6hpjpDGdpo6KRW1p8GI="/>
+        <field:display field="lastName" id="s_ar_edu_um_pruebaseguridad_model_User_lastName" object="${user}" z="nLV361w3wnKWv/VVGXnN5+JhB1c="/>
+        <field:display field="emailAddress" id="s_ar_edu_um_pruebaseguridad_model_User_emailAddress" object="${user}" z="nbJrabR8mL6ZDwG6MpPRXrPMA88="/>
+        <field:display field="password" id="s_ar_edu_um_pruebaseguridad_model_User_password" object="${user}" z="+ukIKJOE6VVCsVy6k7+pPciKWsE="/>
+        <field:display date="true" dateTimePattern="${user_activationdate_date_format}" field="activationDate" id="s_ar_edu_um_pruebaseguridad_model_User_activationDate" object="${user}" z="g4AWgFWFavbZNWWdfRroCq8Cv/g="/>
+        <field:display field="activationKey" id="s_ar_edu_um_pruebaseguridad_model_User_activationKey" object="${user}" z="/ZWjFuiNxqNHw1Xfty8wYv+LK3o="/>
+        <field:display field="enabled" id="s_ar_edu_um_pruebaseguridad_model_User_enabled" object="${user}" z="EacK+lRWusFdzS3ZMlZiqrrPABc="/>
+        <field:display field="locked" id="s_ar_edu_um_pruebaseguridad_model_User_locked" object="${user}" z="Y72IcE+9abbv779vp5xZmAI8RzE="/>
+    </page:show>
+</div>

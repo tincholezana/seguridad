@@ -1,0 +1,54 @@
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2015-02-02 17:37:34
+project --topLevelPackage ar.edu.um.pruebaseguridad --projectName prueba_seguridad --java 7 --packaging WAR
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2015-02-02 17:37:53
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2015-02-02 17:39:01
+jpa setup --provider HIBERNATE --database MYSQL --jndiDataSource java:jboss/datasources/morodogtp
+entity jpa --class ~.domain.Persona --testAutomatically true
+field string --fieldName nombre --notNull
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2015-02-02 17:47:33
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2015-02-02 17:47:49
+web mvc setup
+web mvc all --package ~.web
+// [failed] osgi uninstall --bundleSymbolicName com.xsoftwarelabs.spring.roo.addon.typicalsecurity
+addon remove --bundleSymbolicName com.xsoftwarelabs.spring.roo.addon.typicalsecurity
+osgi start --url http://spring-roo-addon-typical-security.googlecode.com/files/com.xsoftwarelabs.spring.roo.addon.typicalsecurity-0.1.5.BUILD-SNAPSHOT.jar
+osgi start --url http://spring-roo-addon-typical-security.googlecode.com/files/com.xsoftwarelabs.spring.roo.addon.typicalsecurity-0.1.4.BUILD-SNAPSHOT.jar
+osgi start --url http://spring-roo-addon-typical-security.googlecode.com/files/com.xsoftwarelabs.spring.roo.addon.typicalsecurity-0.1.5.BUILD-SNAPSHOT.jar
+osgi ps
+osgi uninstall --bundleSymbolicName com.xsoftwarelabs.spring.roo.addon.typicalsecurity
+addon remove --bundleSymbolicName com.xsoftwarelabs.spring.roo.addon.typicalsecurity
+osgi start --url http://spring-roo-addon-typical-security.googlecode.com/files/com.xsoftwarelabs.spring.roo.addon.typicalsecurity-0.1.4.BUILD-SNAPSHOT.jar
+osgi ps
+entity jpa --class ~.model.User --testAutomatically --permitReservedWords
+field string --fieldName firstName --sizeMin 1 --notNull
+field string --fieldName lastName --sizeMin 1 --notNull
+field string --fieldName emailAddress --sizeMin 1 --notNull --unique
+field string --fieldName password --sizeMin 1 --notNull
+field date --fieldName activationDate --type java.util.Date 
+field string --fieldName activationKey 
+field boolean --fieldName enabled 
+field boolean --fieldName locked 
+entity jpa --class ~.model.Role --testAutomatically --permitReservedWords
+field string --fieldName roleName --sizeMin 1 --notNull --unique
+field string --fieldName roleDescription --sizeMin --sizeMax 200 --notNull
+entity jpa --class ~.model.UserRole --testAutomatically
+field reference --fieldName userEntry --type ~.model.User --notNull
+field reference --fieldName roleEntry --type ~.model.Role --notNull
+finder add findUsersByEmailAddress --class ~.model.User
+finder add findUsersByActivationKeyAndEmailAddress --class ~.model.User
+finder add findUserRolesByUserEntry --class ~.model.UserRole
+web mvc scaffold --class ~.web.UserController --backingType ~.model.User
+web mvc scaffold --class ~.web.RoleController --backingType ~.model.Role
+web mvc scaffold --class ~.web.UserRoleController --backingType ~.model.UserRole
+security setup
+email sender setup --hostServer smtp.gmail.com --port 587 --protocol SMTP --username rohitsghatoltest@gmail.com --password password4me
+email template setup --from rohitsghatoltest@gmail.com --subject "Password Recovery"
+typicalsecurity setup --entityPackage ~.model --controllerPackage ~.web
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2015-02-03 03:18:43
+// Spring Roo 1.3.0.RELEASE [rev 4877cfb] log opened at 2015-02-24 20:43:35
+web mvc jquery setup
+web mvc bootstrap setup
+// Spring Roo 1.3.0.RELEASE [rev 4877cfb] log closed at 2015-02-24 20:55:41
+// Spring Roo 1.3.0.RELEASE [rev 4877cfb] log opened at 2015-02-24 21:11:41
+web mvc language --code es
+// Spring Roo 1.3.0.RELEASE [rev 4877cfb] log closed at 2015-02-24 21:21:02

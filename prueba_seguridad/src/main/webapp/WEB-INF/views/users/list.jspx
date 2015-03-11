@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/jquery/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_ar_edu_um_pruebaseguridad_model_User" items="${users}" z="9cp8YVaI0g586Rmrku4b3OHaKw0=">
+        <table:table data="${users}" id="l_ar_edu_um_pruebaseguridad_model_User" path="/users" z="kXHt+Rczl4y81f6YSRu72V+26Hg=">
+            <table:column id="c_ar_edu_um_pruebaseguridad_model_User_firstName" property="firstName" z="UE1UntsVQ8ntvlA8Ax1gT+MS15k="/>
+            <table:column id="c_ar_edu_um_pruebaseguridad_model_User_lastName" property="lastName" z="dHw9HvfbxnlHn9r+WxZAyhfKQKQ="/>
+            <table:column id="c_ar_edu_um_pruebaseguridad_model_User_emailAddress" property="emailAddress" z="SD5PO5qPpGvWYkevFdnQ5dzIC50="/>
+            <table:column id="c_ar_edu_um_pruebaseguridad_model_User_password" property="password" z="VJTVFtp+jZFWNI9cAZWVl2LvGEg="/>
+            <table:column date="true" dateTimePattern="${user_activationdate_date_format}" id="c_ar_edu_um_pruebaseguridad_model_User_activationDate" property="activationDate" z="TzLwHhOuZV7RqTXvNXCibNh41oE="/>
+            <table:column id="c_ar_edu_um_pruebaseguridad_model_User_activationKey" property="activationKey" z="J92f+ajJa2HHciVcVV0gm+uZEC4="/>
+        </table:table>
+    </page:list>
+</div>
